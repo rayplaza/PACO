@@ -6,8 +6,9 @@ var projectSchema = new Schema({
    profession: String,
    daw: String,
    date: Date,
-   plugins: [pluginSchema],
-   comments: [commentSchema]  
+   // to be thier own schema
+   plugins: [String],
+   comments: [String]  
 }, {
     timestamps: true
 });
