@@ -10,7 +10,7 @@ function create(req, res) {
     var project = new Project(req.body);
     project.save(function(err) {
         if (err) return res.render('projects/new');
-        res.redirect('/projects/new');
+        res.redirect('/projects');
     });
 }
 
