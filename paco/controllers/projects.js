@@ -17,3 +17,4 @@ function create(req, res) {
 function newProject(req, res) {
     res.render('projects/new');
 }
+
