@@ -5,7 +5,6 @@ var projectSchema = new Schema({
    projectName: String,
    profession: String,
    daw: String,
-   date: Date,
    // to be thier own schema
    plugins: [String],
    comments: [String]  
