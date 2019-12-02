@@ -5,8 +5,14 @@ module.exports = {
     index,
     new: newProject,
     create,
+    show
 }
 
+function show(req, res) {
+    Project.findById(req.params.id, function(err, project) {
+        res.render('projects/show', {title: 'Project Detail', project});
+    });
+}
 
 function index(req, res) {
     Project.find({}, function(err, projects) {

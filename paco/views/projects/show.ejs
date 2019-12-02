@@ -22,28 +22,5 @@
       </ul>
     </nav>
     <br>
-    <table class="table table-dark id="list">
-            <thead>
-              <tr>
-                <th scope="col">Project Name</th>
-                <th scope="col">Owner</th>
-                <th scope="col">Profession</th>
-                <th scope="col">DAW</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% projects.forEach(function(p) { %>
-                <tr>
-                  <td><%= p.projectName %></td>
-                  <td><%= p.user %></td>
-                  <td><%= p.profession %></td>
-                  <td><%= p.daw %></td>
-                  <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
-                </tr>
-                <% }); %>
-              </tbody>
-            </table>
-  </body>
+    </body>
 </html>
-
