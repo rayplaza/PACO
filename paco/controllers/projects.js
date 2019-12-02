@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
     Project.find({}, function(err, projects) {
-        res.render('projects/index', {projects, title: "HELLLO", user: req.user});
+        res.render('projects/index', {projects, title: "Projects List", user: req.user});
     });
 }
 
