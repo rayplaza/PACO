@@ -1,4 +1,4 @@
-var Project = require('../models/projects');
+var Project = require('../models/project');
 
 
 module.exports = {
