@@ -3,9 +3,7 @@ var Schema = mongoose.Schema;
 
 
 var projectSchema = new Schema({
-   user: String,
-   email: String,
-   googleId: String,
+   user: [{type: Schema.Types.ObjectId, ref: 'User'}],
    projectName: String,
    profession: String,
    daw: String,

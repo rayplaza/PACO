@@ -2,9 +2,18 @@ var Project = require('../models/project');
 
 
 module.exports = {
+    index,
     new: newProject,
-    create
+    create,
 }
+
+
+function index(req, res) {
+    Project.find({}, function(err, projects) {
+        res.render('projects/index', {projects, title: "HELLLO", user: req.user});
+    });
+}
+
 
 function create(req, res) {
     var project = new Project(req.body);
