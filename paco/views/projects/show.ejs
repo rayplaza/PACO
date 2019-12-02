@@ -32,5 +32,12 @@
             <div class="font-weight-bold">DAW: </div>
             <div><%= project.daw %></div>
           </section>
+          <br><br><h2>Comments</h2>
+          <form id="add-comment-form" method="POST"
+          action="/projects/<%= project._id %>/comments">
+          <label>Comments:</label>
+          <textarea name="content"></textarea>
+          <input type="submit" value="Add Comment">
+        </form>
   </body>
 </html>

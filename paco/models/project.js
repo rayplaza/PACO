@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var commentSchema = new Schema({
+    content: String,
+})
 
 var projectSchema = new Schema({
    user: [{type: Schema.Types.ObjectId, ref: 'User'}],
@@ -9,7 +12,7 @@ var projectSchema = new Schema({
    daw: String,
    // to be thier own schema
    plugins: [String],
-   comments: [String]  
+   comments: [commentSchema]  
 }, {
     timestamps: true
 });
