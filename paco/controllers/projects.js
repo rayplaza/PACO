@@ -1,4 +1,5 @@
 var Project = require('../models/project');
+var Plugin = require('../models/plugin');
 
 
 module.exports = {
@@ -10,7 +11,9 @@ module.exports = {
 
 function show(req, res) {
     Project.findById(req.params.id, function(err, project) {
-        res.render('projects/show', {title: 'Project Detail', user: req.user, project});
+        Plugin.find({project: project._id}, function(err, plugins) {
+            res.render('projects/show', {title: 'Project Detail', user: req.user, project, plugins});
+        });
     });
 }
 
