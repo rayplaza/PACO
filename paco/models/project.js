@@ -2,8 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
+    user: [{type: Schema.Types.ObjectId, ref: 'User'}],
     content: String,
-})
+}, {
+    timestamps: true
+});
 
 var projectSchema = new Schema({
    user: [{type: Schema.Types.ObjectId, ref: 'User'}],

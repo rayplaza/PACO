@@ -39,5 +39,26 @@
           <textarea name="content"></textarea>
           <input type="submit" value="Add Comment">
         </form>
+
+        <% if (project.comments.length) { %>
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% project.comments.forEach(function(c) { %>
+                  <tr>
+                    <td><%= c.user %></td>
+                    <td><%= c.content %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          <% } else { %>
+            <h5>No Comment</h5>
+          <% } %>
   </body>
 </html>

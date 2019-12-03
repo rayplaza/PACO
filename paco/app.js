@@ -16,6 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var projectsRouter = require('./routes/projects');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/projects', projectsRouter);
+app.use('/', commentsRouter);
 
 
 // catch 404 and forward to error handler
