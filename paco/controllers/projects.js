@@ -6,7 +6,14 @@ module.exports = {
     index,
     new: newProject,
     create,
-    show
+    show,
+    delete: delProject
+}
+
+function delProject(req, res) {
+    Project.findByIdAndDelete(req.params.id, (err, project)=>{
+        res.redirect(`/projects/${project.user}`);
+    });
 }
 
 function show(req, res) {

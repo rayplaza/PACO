@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
     <nav class="navbar navbar-dark bg-dark">
-      <a href="" class="font-weight-bold">P.A.C.O.</a>
-      <a href="/projects/new" class="font-italic">ADD PROJECT</a>
-      <ul class="right">
-          <li>
-          <% if (user) { %>
-              <a href="/logout">Log Out</a>
-          <% } else { %>
-              <a href="/auth/google">Login with Google</a>
-          <% } %>
-          </li>
-      </ul>
+        <a href="" class="font-weight-bold">P.A.C.O.</a>
+        <a href="/projects/new" class="font-italic">ADD PROJECT</a>
+        <ul class="right">
+            <li>
+                <% if (user) { %>
+                <a href="/logout">Log Out</a>
+                <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+                <% } %>
+            </li>
+        </ul>
     </nav>
     <br>
-    <table class="table table-dark id="list">
-            <thead>
-              <tr>
+    <table class="table table-dark id=" list">
+        <thead>
+            <tr>
                 <th scope="col">Project Name</th>
                 <th scope="col">Owner</th>
                 <th scope="col">Profession</th>
                 <th scope="col">DAW</th>
                 <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% projects.forEach(function(p) { %>
-                <tr>
-                  <td><%= p.projectName %></td>
-                  <td><%= p.userName %></td>
-                  <td><%= p.profession %></td>
-                  <td><%= p.daw %></td>
-                  <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
-                </tr>
-                <% }); %>
-              </tbody>
-            </table>
-  </body>
-</html>
+            </tr>
+        </thead>
+        <tbody>
+            <% projects.forEach(function(p) { %>
+            <tr>
+                <td><%= p.projectName %></td>
+                <td><%= p.userName %></td>
+                <td><%= p.profession %></td>
+                <td><%= p.daw %></td>
+                <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
 
+                <% if (p.user.toString() == user._id.toString()) { %>
+                <td>
+                    <form action="/projects/<%= p._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger btn-sm">X</button>
+                    </form>
+                </td>
+                <% } else { %>
+                <td>Not authorized to delete</td>
+                <% } %>
+                <% }); %>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

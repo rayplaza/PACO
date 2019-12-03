@@ -9,7 +9,6 @@ module.exports = {
 function create(req, res) {
     req.body.project = req.params.id
     Plugin.create(req.body, function(err, plugin) {
-        console.log("PLUGIN JUST CREATED: ", plugin)
         res.redirect(`/projects/${req.params.id}`);
     });
 }
