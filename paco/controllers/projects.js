@@ -10,23 +10,27 @@ module.exports = {
 }
 
 function show(req, res) {
-    Project.findById(req.params.id, function(err, project) {
-        Plugin.find({project: project._id}, function(err, plugins) {
-            res.render('projects/show', {title: 'Project Detail', user: req.user, project, plugins});
+    Project.findById(req.params.id, function (err, project) {
+        Plugin.find({ project: project._id }, function (err, plugins) {
+            res.render('projects/show', { title: 'Project Detail', user: req.user, project, plugins });
         });
     });
 }
 
 function index(req, res) {
-    Project.find({}, function(err, projects) {
-        res.render('projects/index', {projects, title: "Projects List", user: req.user});
+    Project.find({}, function (err, projects) {
+
+        res.render('projects/index', { projects, title: "Projects List", user: req.user });
     });
 }
 
 
 function create(req, res) {
     var project = new Project(req.body);
-    project.save(function(err) {
+    let x = req.user.name
+    project.user = req.user
+    project.userName = x
+    project.save(function (err) {
         if (err) return res.render('projects/new');
         res.redirect('/projects');
     });
