@@ -12,7 +12,7 @@ module.exports = {
 
 function delProject(req, res) {
     Project.findByIdAndDelete(req.params.id, (err, project)=>{
-        res.redirect(`/projects/${project.user}`);
+        res.redirect(`/projects`);
     });
 }
 
@@ -26,7 +26,6 @@ function show(req, res) {
 
 function index(req, res) {
     Project.find({}, function (err, projects) {
-
         res.render('projects/index', { projects, title: "Projects List", user: req.user });
     });
 }
