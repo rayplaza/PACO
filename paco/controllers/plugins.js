@@ -12,7 +12,8 @@ function update(req, res) {
     let plugs = req.params.pid;
     let proj = req.params.id;
     let plugUpdate = req.body;
-    Plugin.findByIdAndUpdate(plugs, plugUpdate, function(err, plugs){
+    Plugin.findByIdAndUpdate(plugs, plugUpdate, {new: true}, function(err, plugIn){
+        console.log("UPDATED PLUGIN: ", plugIn)
         res.redirect(`/projects/${proj}`);
     });
 }
@@ -21,7 +22,6 @@ function update(req, res) {
 
 function edit (req, res) {
     let plugs = req.params.pid
-    console.log(plugs)
     Project.findById(req.params.id, function(err, project) {
         res.render(`plugins/edit`, {
             title: "Edit",
@@ -35,7 +35,13 @@ function edit (req, res) {
 function create(req, res) {
     req.body.project = req.params.id
     Plugin.create(req.body, function(err, plugin) {
-        res.redirect(`/projects/${req.params.id}`);
+        Project.findById(req.params.id, function(err, project){
+            project.plugins.push(plugin._id)
+            project.save(function(err){
+                console.log("NEW PLUGIN ADDED TO PROJECT: ", project)
+                res.redirect(`/projects/${req.params.id}`);
+            })
+        })
     });
 }
 

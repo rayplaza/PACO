@@ -5,7 +5,7 @@ var express = require('express');
  router.get('/projects/:id/plugins/new', pluginsCtrl.new);
  router.post('/projects/:id/plugins', isLoggedIn, pluginsCtrl.create);
  router.get('/projects/:id/plugins/:pid/edit', pluginsCtrl.edit);
- router.post('/projects/:id/plugins/:pid', isLoggedIn, pluginsCtrl.update);
+ router.put('/projects/:id/plugins/:pid', isLoggedIn, pluginsCtrl.update);
 
  function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
