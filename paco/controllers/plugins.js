@@ -9,8 +9,10 @@ module.exports = {
 };
 
 function update(req, res) {
-    Plugin.update(req.params.id, req.body);
-    res.redirect(`/plugins/${req.params.id}`);
+    let plugs = req.params.id
+    Plugin.findByIdAndUpdate(req.params.id, (err, plugin)=> {
+        res.redirect(`/projects/${req.params.id}`);
+    });
 }
 
 
@@ -19,7 +21,7 @@ function edit (req, res) {
     console.log(plugs)
     Project.findById(req.params.id, function(err, project) {
         res.render(`plugins/edit`, {
-            title: "HELLO",
+            title: "Edit",
             plugs,
             project,
             user: req.user
