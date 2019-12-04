@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+        <h2>Edit Plugin</h2>
+        <form id="add-plugin-form" action="/projects/<%= project._id %>/plugins?_method=PUT" method="POST">
+            <label>Manufacturer:
+              <input type="text" name="manufacturer" value="<%= %>">
+            </label><br>
+            <label>Plugin Name:
+              <input type="text" name="pluginName" value="<%= %>">
+            </label><br>
+            <label>Type:
+              <select name="type" value="<%= %>">
+                <option value="AmpsPedals">Amps & Pedals</option>
+                <option value="Delay">Delay</option>
+                <option value="Distortion">Distortion</option>
+                <option value="Dynamics">Dynamics</option>
+                <option value="EQ">EQ</option>
+                <option value="Filter">Filter</option>
+                <option value="Imaging">Imaging</option>
+                <option value="Pitch">Pitch</option>
+                <option value="Reverb">Reverb</option>
+                <option value="Specialized">Specialized</option>
+                <option value="Utility">Utility</option>
+                <option value="Metering">Metering</option>
+                <option value="Multi-Effects">Multi-Effects</option>
+                <option value="Other">Other</option>
+            </select>
+            </label><br>
+            <label>Version:
+              <input type="text" name="version" value="<%= %>">
+            </label><br>
+              <label>Used On:
+              <input type="text" name="usedOn" value="<%= %>">
+            </label><br>
+            <input type="submit" value="Update Plugin">
+        </form>
+  </body>
+  </html>

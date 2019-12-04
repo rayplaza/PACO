@@ -40,6 +40,7 @@
                 <th scope="col">Type</th>
                 <th scope="col">Version</th>
                 <th scope="col">Used On</th>
+                <th></th>
             </thead>
                 <tbody>
             <% plugins.forEach(plugs => { %>
@@ -49,8 +50,14 @@
                 <td><%= plugs.type %></td>
                 <td><%= plugs.version %></td>
                 <td><%= plugs.usedOn %></td>
-              </tr>
-              <% }) %>
+                
+                <% if (project.user.toString() == user._id.toString()) { %>
+                    <td>
+                        <a href="/projects/<%=project._id%>/plugins/<%=plugs._id%>/edit">Edit</a>
+                    </td>
+                    <% } %>
+                    <% }); %>
+                </tr>
               </tbody>
             </table>
     </section>
