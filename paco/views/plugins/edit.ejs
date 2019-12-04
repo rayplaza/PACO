@@ -9,7 +9,7 @@
   </head>
   <body>
         <h2>Edit Plugin</h2>
-        <form id="edit-plugin-form" action="/projects/<%= project._id %>/plugins/<%= plugs._id %>?_method=PUT" method="POST">
+        <form id="edit-plugin-form" action="/projects/<%= project._id %>/plugins/<%= plugs._id %>" method="POST">
             <label>Manufacturer:
               <input type="text" name="manufacturer" value="<%= %>">
             </label><br>

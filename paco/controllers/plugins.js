@@ -9,11 +9,14 @@ module.exports = {
 };
 
 function update(req, res) {
-    let plugs = req.params.id
-    Plugin.findByIdAndUpdate(req.params.id, (err, plugin)=> {
-        res.redirect(`/projects/${req.params.id}`);
+    let plugs = req.params.pid;
+    let proj = req.params.id;
+    let plugUpdate = req.body;
+    Plugin.findByIdAndUpdate(plugs, plugUpdate, function(err, plugs){
+        res.redirect(`/projects/${proj}`);
     });
 }
+
 
 
 function edit (req, res) {
