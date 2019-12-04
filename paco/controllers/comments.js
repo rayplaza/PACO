@@ -9,7 +9,6 @@ module.exports = {
 
 function create(req, res) {
     Project.findById(req.params.id, function(err, project) {
-        console.log(project)
       project.comments.push(req.body);
       project.save(function(err) {
         res.redirect(`/projects/${project._id}`);

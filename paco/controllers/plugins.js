@@ -13,7 +13,6 @@ function update(req, res) {
     let proj = req.params.id;
     let plugUpdate = req.body;
     Plugin.findByIdAndUpdate(plugs, plugUpdate, {new: true}, function(err, plugIn){
-        console.log("UPDATED PLUGIN: ", plugIn)
         res.redirect(`/projects/${proj}`);
     });
 }
@@ -38,7 +37,6 @@ function create(req, res) {
         Project.findById(req.params.id, function(err, project){
             project.plugins.push(plugin._id)
             project.save(function(err){
-                console.log("NEW PLUGIN ADDED TO PROJECT: ", project)
                 res.redirect(`/projects/${req.params.id}`);
             })
         })

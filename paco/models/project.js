@@ -14,7 +14,6 @@ var projectSchema = new Schema({
    projectName: String,
    profession: String,
    daw: String,
-   // to be thier own schema
    plugins: [{type: Schema.Types.ObjectId, ref: 'Plugin'}],
    comments: [commentSchema]  
 }, {

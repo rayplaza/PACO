@@ -22,17 +22,16 @@
           </li>
       </ul>
     </nav>
-    <br>
-    <section id="show-page">
-        <div class="font-weight-bold">Project Name: </div>
-        <div><%= project.projectName %></div>
-        <div class="font-weight-bold">Owner: </div>
-        <div><%= project.userName %></div>
-        <div class="font-weight-bold">Profession: </div>
-        <div><%= project.profession %></div>
-        <div class="font-weight-bold">DAW: </div>
-        <div><%= project.daw %></div>
-        <div class="font-weight-bold">Plugins</div><a href="/projects/<%=project._id%>/plugins/new">ADD PLUGIN</a>
+    <section class="bg-transparent" id="show-page">
+        <div class="font-weight-bold badge badge-info">Project Name: </div>
+        <div class="text-white font-weight-light badge badge-dark"><%= project.projectName %></div>
+        <div class="font-weight-bold badge badge-info">Owner: </div>
+        <div class="text-white font-weight-light badge badge-dark"><%= project.userName %></div><br>
+        <div class="font-weight-bold badge badge-info">Profession: </div>
+        <div class="text-white font-weight-light badge badge-dark"><%= project.profession %></div>
+        <div class="font-weight-bold badge badge-info">DAW: </div>
+        <div class="text-white font-weight-light badge badge-dark"><%= project.daw %></div><br>
+        <div class="font-weight-bold badge badge-info">Plugins</div><a href="/projects/<%=project._id%>/plugins/new" class="badge badge-danger">ADD PLUGIN</a>
         <table class="table table-dark id="list">
             <thead>
                 <th scope="col">Manufacturer</th>
@@ -61,11 +60,12 @@
               </tbody>
             </table>
     </section>
-          <br><br><h2>Comments</h2>
+    <section class="bg-info" id="comment-page">
+          <h2>Comments</h2>
           <form id="add-comment-form" method="POST"
           action="/projects/<%= project._id %>/comments">
           <label>Comments:</label>
-          <textarea name="content"></textarea>
+          <textarea name="content" class="bg-light"></textarea>
           <input type="submit" value="Add Comment">
         </form>
         <% if (project.comments.length) { %>
@@ -88,5 +88,6 @@
           <% } else { %>
             <h5>No Comment</h5>
           <% } %>
+        </section>
   </body>
 </html>
