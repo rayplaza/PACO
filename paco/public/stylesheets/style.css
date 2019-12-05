@@ -35,3 +35,13 @@ body {
   color: black;
   text-align: center;
 }
+
+#small-logo {
+  font-family: 'Stalinist One', cursive;
+  color: black;
+}
+
+#login-icon {
+  font-family: 'Righteous', cursive;
+  color: coral;
+}
