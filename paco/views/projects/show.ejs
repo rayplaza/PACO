@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark" id="nav-badge">
       <h3 class="text-warning font-weight-bolder">P.A.C.O.</h3>
       <a href="/projects" class="badge badge-light">ALL PROJECTS</a>
       <a href="/projects/new" class="badge badge-light">ADD PROJECT</a>
@@ -64,9 +64,8 @@
           <h2>Comments</h2>
           <form id="add-comment-form" method="POST"
           action="/projects/<%= project._id %>/comments">
-          <label>Comments:</label>
           <textarea name="content" class="bg-light"></textarea>
-          <input type="submit" value="Add Comment">
+          <input  type="submit" value="Add Comment">
         </form>
         <% if (project.comments.length) { %>
             <table class="table table-warning">
