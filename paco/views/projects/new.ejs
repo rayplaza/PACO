@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stalinist+One&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +11,9 @@
     <title>Document</title>
 </head>
 <body>
-        <h2>Enter a New Project</h2>
+        <h2 id="new-plugin">Enter a New Project</h2>
         <form action="/projects" method="POST">
+            <div class="form-group">
             <label>Project Name:
               <input type="text" name="projectName">
             </label><br>
@@ -19,7 +22,8 @@
             </label><br>
             <label>DAW:
               <input type="text" name="daw">
-            </label><br>
+            </label>
+            </div><br>
             <input type="submit" value="Add Project">
         </form>
 </body>

@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a href="" class="font-weight-bold" id="small-logo">P.A.C.O.</a>
+        <a href="" class="text-warning font-weight-bold" id="small-logo">P.A.C.O.</a>
         <a href="/projects/new" class="badge badge-light">ADD PROJECT</a>
         <ul class="right" id="login-icon">
             <li>
@@ -27,7 +27,7 @@
         </ul>
     </nav>
     <br>
-    <table class="table table-dark id=" list">
+    <table class="table table-striped table-dark" id="index-list">
         <thead>
             <tr>
                 <th scope="col">Project Name</th>
@@ -44,7 +44,7 @@
                 <td><%= p.userName %></td>
                 <td><%= p.profession %></td>
                 <td><%= p.daw %></td>
-                <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
+                <td><a href="/projects/<%= p._id %>" class="badge badge-light">DETAILS</a></td>
 
                 <% if (p.user.toString() == user._id.toString()) { %>
                 <td>

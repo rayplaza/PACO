@@ -45,3 +45,12 @@ body {
   font-family: 'Righteous', cursive;
   color: coral;
 }
+
+#index-list {
+  font-family: 'Righteous', cursive;  
+}
+
+#new-plugin {
+  font-family: 'Righteous', cursive; 
+  font-size: 50px; 
+}
