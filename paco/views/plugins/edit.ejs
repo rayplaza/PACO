@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stalinist+One&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-        <h2>Edit Plugin</h2>
+        <h2 id="new-plugin" class="badge badge-warning">Edit Plugin</h2>
         <form id="edit-plugin-form" action="/projects/<%= project._id %>/plugins/<%= plugs %>?_method=PUT" method="POST">
+          <div class="form-group bg-secondary" id="index-list">
             <label>Manufacturer:
               <input type="text" name="manufacturer" value="<%= %>">
             </label><br>
@@ -39,8 +42,9 @@
             </label><br>
               <label>Used On:
               <input type="text" name="usedOn" value="<%= %>">
-            </label><br>
-            <input type="submit" value="Update Plugin">
+            </label>
+            </div>
+            <input type="submit" class="btn btn-info" value="Update Plugin">
         </form>
   </body>
   </html>

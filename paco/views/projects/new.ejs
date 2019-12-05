@@ -11,9 +11,10 @@
     <title>Document</title>
 </head>
 <body>
-        <h2 id="new-plugin">Enter a New Project</h2>
-        <form action="/projects" method="POST">
-            <div class="form-group">
+        <h2 id="new-plugin" class="badge badge-warning">Enter a New Project</h2>
+        <form id="add-plugin-form" action="/projects" method="POST">
+            <div class="form-group bg-secondary" id="index-list">
+                <br>
             <label>Project Name:
               <input type="text" name="projectName">
             </label><br>
@@ -23,8 +24,8 @@
             <label>DAW:
               <input type="text" name="daw">
             </label>
-            </div><br>
-            <input type="submit" value="Add Project">
+            </div>
+            <input type="submit" class="btn btn-info" value="Add Project">
         </form>
 </body>
 </html>
