@@ -1,7 +1,8 @@
 body {
   background-image: url("https://i.imgur.com/3pi69m8.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: center top;
   background-attachment: fixed;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -19,7 +20,7 @@ body {
 }
 
 #nav-badge {
-
+  justify-content: space-between;
 }
 
 
