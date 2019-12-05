@@ -9,7 +9,7 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <h3 class="text-white font-weight-bolder">P.A.C.O.</h3>
+      <h3 class="text-warning font-weight-bolder">P.A.C.O.</h3>
       <a href="/projects" class="badge badge-light">ALL PROJECTS</a>
       <a href="/projects/new" class="badge badge-light">ADD PROJECT</a>
       <ul class="right">
@@ -31,8 +31,8 @@
         <div class="text-white font-weight-light badge badge-dark"><%= project.profession %></div>
         <div class="font-weight-bold badge badge-info">DAW: </div>
         <div class="text-white font-weight-light badge badge-dark"><%= project.daw %></div><br>
-        <div class="font-weight-bold badge badge-info">Plugins</div><a href="/projects/<%=project._id%>/plugins/new" class="badge badge-danger">ADD PLUGIN</a>
-        <table class="table table-dark id="list">
+        <div class="font-weight-bold badge badge-warning">Plugins</div><a href="/projects/<%=project._id%>/plugins/new" class="badge badge-danger">ADD PLUGIN</a>
+        <table class="table table-striped table-dark" id="list">
             <thead>
                 <th scope="col">Manufacturer</th>
                 <th scope="col">Plugin Name</th>
@@ -69,7 +69,7 @@
           <input type="submit" value="Add Comment">
         </form>
         <% if (project.comments.length) { %>
-            <table>
+            <table class="table-warning">
               <thead>
                 <tr>
                   <th>User</th>
