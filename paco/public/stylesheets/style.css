@@ -23,4 +23,15 @@ body {
   justify-content: space-between;
 }
 
+#jumbotron {
+  font-family: 'Stalinist One', cursive;
+  color: coral;
+  text-align: center;
+  font-size: 150px;
+}
 
+#jumbotron-explain {
+  font-family: 'Righteous', cursive;
+  color: black;
+  text-align: center;
+}
