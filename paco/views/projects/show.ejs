@@ -33,8 +33,8 @@
         <div class="text-white font-weight-light badge badge-dark"><%= project.profession %></div>
         <div class="font-weight-bold badge badge-info">DAW: </div>
         <div class="text-white font-weight-light badge badge-dark"><%= project.daw %></div><br>
-        <div class="font-weight-bold badge badge-warning">Plugins</div><a href="/projects/<%=project._id%>/plugins/new" class="badge badge-danger">ADD PLUGIN</a>
-        <table class="table table-striped table-dark" id="index-list">
+        <div id="comments"class="font-weight-bold badge badge-warning">Plugins</div><a href="/projects/<%=project._id%>/plugins/new" class="badge badge-danger">ADD PLUGIN</a>
+        <table class="table table-striped table-dark">
             <thead>
                 <th scope="col">Manufacturer</th>
                 <th scope="col">Plugin Name</th>
@@ -63,11 +63,11 @@
             </table>
     </section>
     <section class="bg-info" id="comment-page">
-          <h2>Comments</h2>
+          <h2 id="comments" class="badge badge-warning">Comments</h2>
           <form id="add-comment-form" method="POST"
           action="/projects/<%= project._id %>/comments">
           <textarea name="content" class="bg-light"></textarea>
-          <input  type="submit" value="Add Comment">
+          <input id="add-comment" type="submit" class="bg-warning" value="Add Comment">
         </form>
         <% if (project.comments.length) { %>
             <table class="table table-warning">
