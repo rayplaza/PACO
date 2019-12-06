@@ -1,4 +1,4 @@
-#P.A.C.O.
+# P.A.C.O.
 
 ## Description:
 
@@ -13,7 +13,7 @@ Sign up and add your projects and the plugins you're working on. PACO gives you 
 ![alt](https://i.imgur.com/ZcgReXI.jpg)
 
 
-##Technologies Used:
+## Technologies Used:
 - HTML
 - CSS
 - Javascript
@@ -22,7 +22,7 @@ Sign up and add your projects and the plugins you're working on. PACO gives you 
 - Mongoose
 - MongoDB
 
-##Getting Started:
+## Getting Started:
 
 Click the login button in the upper right corner to get started. Inside you will be able to add a project and view others projects.
 
@@ -34,7 +34,7 @@ In the details page you can also comment on your project or other projects.
 
 [Link to P.A.C.O.](https://p-a-c-o.herokuapp.com/)
 
-##Next Steps:
+## Next Steps:
 
 Soon you will be able to add sort through projects by project name or user. You will also have a menu specicially for your plugins. 
 
